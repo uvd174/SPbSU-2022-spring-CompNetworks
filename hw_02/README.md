@@ -1,6 +1,6 @@
 # Setup Guide
 ## System requirements
-* Python, >=3.7 (3.9.7 will d  efinitely work);
+* Python, >=3.7 (3.9.7 will definitely work);
 * pip.
 
 ## Installation
