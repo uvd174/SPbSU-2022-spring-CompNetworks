@@ -9,6 +9,6 @@ Install dependencies with
 `pip install -r requirements.txt`
 
 ## Run the app
-`python .\my_rest_service.py`
+`python my_rest_service.py`
 
 Сервер запустится на localhost:5000.
