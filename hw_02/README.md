@@ -11,4 +11,4 @@ Install dependencies with
 ## Run the app
 `python .\my_rest_service.py`
 
-Сервер запустится на localhost:5000/shop.
+Сервер запустится на localhost:5000.
