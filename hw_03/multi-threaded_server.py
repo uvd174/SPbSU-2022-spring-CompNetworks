@@ -19,7 +19,7 @@ def client_processing(connection_socket_):
                 data = file.read()
             response = b'HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n' + data
         else:
-            response = b'HTTP/1.1 404 Not Found\r\nContent-Type: text/html\r\n\r\nThe requested file is missing!'
+            response = b'HTTP/1.1 404 Not Found\r\nContent-Type: text/html\r\n\r\n404 Not Found'
 
         connection_socket_.sendall(response)
 
