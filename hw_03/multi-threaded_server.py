@@ -41,8 +41,7 @@ with socket(AF_INET, SOCK_STREAM) as server_socket:
     server_socket.listen(1)
 
     for _ in range(concurrency_level):
-        thread = Thread(target=socket_worker, args=(queue,), daemon=True)
-        thread.start()
+        Thread(target=socket_worker, args=(queue,), daemon=True).start()
 
     print('The server is ready to receive.')
 
