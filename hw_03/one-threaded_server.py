@@ -25,4 +25,4 @@ with socket(AF_INET, SOCK_STREAM) as server_socket:
             else:
                 response = b'HTTP/1.1 404 Not Found\r\nContent-Type: text/html\r\n\r\nThe requested file is missing!'
 
-            connection_socket.send(response)
+            connection_socket.sendall(response)
