@@ -13,6 +13,6 @@ will be sent at the `destination_address`. `format` is either `txt` or `html`.
 The message with the content from the `content_file` will be sent at the `destination_address`.
 If the file is in the .jpg format, an image will be sent.
 
-##Proof of work
+## Proof of work
 
 ![proof image](it_works.png)

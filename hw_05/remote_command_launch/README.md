@@ -11,6 +11,6 @@ The server will start at port 5000.
 
 The specified `command` will be sent to the server.
 
-##Proof of work
+## Proof of work
 
 ![proof image 2](it_works_2.png)
