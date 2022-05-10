@@ -1,7 +1,7 @@
 #! /usr/local/bin/python
 import sys
 import base64
-from socket import *
+import socket
 import ssl
 
 
@@ -46,7 +46,7 @@ def send_message_and_check_reply(client_socket, message, code=-1, no_response=Fa
         raise RuntimeError('Wrong response code!')
 
 
-with socket(AF_INET, SOCK_STREAM) as smtp_socket:
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as smtp_socket:
     secure_socket = ssl.wrap_socket(smtp_socket)
     secure_socket.connect((SMTP_server, SMTP_port))
 
@@ -63,18 +63,18 @@ with socket(AF_INET, SOCK_STREAM) as smtp_socket:
     send_message_and_check_reply(secure_socket, f"RCPT TO: {destination}\r\n", code=250)
     send_message_and_check_reply(secure_socket, f"DATA\r\n", code=354)
 
-    message = f"""From: {sender}
+    message_content = f"""From: {sender}
 To: {destination}
 Subject: {subject}
 """
     if is_image:
-        message += """Content-Type: image/jpeg; name=picture.jpg
+        message_content += """Content-Type: image/jpeg; name=picture.jpg
 Content-Transfer-Encoding: base64
 
 """
 
-    message += content + '\r\n'
+    message_content += content + '\r\n'
 
-    send_message_and_check_reply(secure_socket, message, no_response=True)
+    send_message_and_check_reply(secure_socket, message_content, no_response=True)
     send_message_and_check_reply(secure_socket, f'.\r\n', code=250)
     send_message_and_check_reply(secure_socket, f'QUIT\r\n', no_response=True)
