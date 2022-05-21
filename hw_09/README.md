@@ -18,4 +18,5 @@ The app will print out your current IP-address and your network mask.
 The app will print out all open ports from `lower_bound` to `upper_bound`.
 
 ## Proof of work
-![proof image](stop_and_wait_screenshot.png)
+![proof image 1](my_ip_screenshot.png)
+![proof image 2](find_open_ports_screenshot.png)
