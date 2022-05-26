@@ -15,7 +15,3 @@ File `execution_log.txt` was produced by a command
 
 ## Network layout
 ![proof image](network_layout.png)
-
-
-
-python rip_emulator.py 4 > execution_log.txt
