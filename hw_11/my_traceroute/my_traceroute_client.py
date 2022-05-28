@@ -128,10 +128,7 @@ if __name__ == '__main__':
                     traceroute_id.to_bytes(2, 'big', signed=False) + sequence_number.to_bytes(2, 'big', signed=False),
                     bytearray([0] * 32),
                 )
-                if target_server_name:
-                    client_socket.sendto(message.to_bytes(), (target_server_name, 1))
-                else:
-                    client_socket.sendto(message.to_bytes(), (target_server_host, 1))
+                client_socket.sendto(message.to_bytes(), (target_server_host, 1))
 
                 try:
                     response_message, current_server_address = client_socket.recvfrom(1024)
